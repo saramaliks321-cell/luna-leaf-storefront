@@ -187,6 +187,10 @@ body {
     margin-top: 5px;
 }
 
+.error {
+    border-color: red !important;
+    color: red !important;
+}
 /* Responsive design */
 @media (max-width: 750px) {
     .product-grid {
@@ -197,10 +201,7 @@ body {
         gap: 18px;
         flex-wrap: wrap;
     }
-.error {
-    border-color: red !important;
-    color: red !important;
-}
+
 
     .logo {
         font-size: 2.1rem;
