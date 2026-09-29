@@ -15,6 +15,51 @@
     <!-- Your Storefront CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+    
+<script>
+    function validate(obj) {
+        obj.classList.remove("error");
+
+        if (obj.value.trim() === "") {
+            obj.classList.add("error");
+            return false;
+        }
+
+        if (obj.id === "email") {
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(obj.value)) {
+                obj.classList.add("error");
+                return false;
+            }
+        }
+
+        if (obj.id === "confirmPassword") {
+            let pw = document.getElementById("password").value;
+            if (obj.value !== pw) {
+                obj.classList.add("error");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function submitForm() {
+        let fields = ["username", "email", "password", "confirmPassword"];
+        let valid = true;
+
+        fields.forEach(id => {
+            let field = document.getElementById(id);
+            if (!validate(field)) valid = false;
+        });
+
+        if (valid) {
+            alert("Form submitted successfully!");
+        } else {
+            alert("Please correct the highlighted fields.");
+        }
+    }
+</script>
 
 <body>
 
