@@ -16,49 +16,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
     
-<script>
-    function validate(obj) {
-        obj.classList.remove("error");
-
-        if (obj.value.trim() === "") {
-            obj.classList.add("error");
-            return false;
-        }
-
-        if (obj.id === "email") {
-            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(obj.value)) {
-                obj.classList.add("error");
-                return false;
-            }
-        }
-
-        if (obj.id === "confirmPassword") {
-            let pw = document.getElementById("password").value;
-            if (obj.value !== pw) {
-                obj.classList.add("error");
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    function submitForm() {
-        let fields = ["username", "email", "password", "confirmPassword"];
-        let valid = true;
-
-        fields.forEach(id => {
-            let field = document.getElementById(id);
-            if (!validate(field)) valid = false;
-        });
-
-        if (valid) {
-            alert("Form submitted successfully!");
-        } else {
-            alert("Please correct the highlighted fields.");
-        }
-    }
 </script>
 
 <body>
@@ -130,14 +87,8 @@
                                 Username
                             </label>
 
-                            <input 
-                                type="text" 
-                                class="form-control" 
-                                id="username"
-                                name="username"
-                                placeholder="Enter your username"
-                                required
-                            >
+                            <input type="text" class="form-control" id="username" onfocusout="validate(this)">
+
                         </div>
 
                         <!-- Email -->
@@ -146,14 +97,8 @@
                                 Email
                             </label>
 
-                            <input 
-                                type="email" 
-                                class="form-control" 
-                                id="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                required
-                            >
+                            <input type="text" class="form-control" id="username" onfocusout="validate(this)">
+
                         </div>
 
                         <!-- Password -->
@@ -162,14 +107,8 @@
                                 Password
                             </label>
 
-                            <input 
-                                type="password" 
-                                class="form-control" 
-                                id="password"
-                                name="password"
-                                placeholder="Enter your password"
-                                required
-                            >
+                            <input type="text" class="form-control" id="username" onfocusout="validate(this)">
+
                         </div>
 
                         <!-- Confirm Password -->
@@ -178,21 +117,14 @@
                                 Confirm Password
                             </label>
 
-                            <input 
-                                type="password" 
-                                class="form-control" 
-                                id="confirmPassword"
-                                name="confirmPassword"
-                                placeholder="Confirm your password"
-                                required
-                            >
+                            <input type="text" class="form-control" id="username" onfocusout="validate(this)">
+
                         </div>
 
                         <!-- Sign Up Button -->
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-success">
-                                Sign Up
-                            </button>
+                            <button type="button" class="btn btn-success w-100" onclick="submitForm()">Sign Up</button>
+
                         </div>
 
                     </form>
@@ -221,6 +153,49 @@
     <script 
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
+<script>
+    function validate(obj) {
+        obj.classList.remove("error");
 
+        if (obj.value.trim() === "") {
+            obj.classList.add("error");
+            return false;
+        }
+
+        if (obj.id === "email") {
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(obj.value)) {
+                obj.classList.add("error");
+                return false;
+            }
+        }
+
+        if (obj.id === "confirmPassword") {
+            let pw = document.getElementById("password").value;
+            if (obj.value !== pw) {
+                obj.classList.add("error");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function submitForm() {
+        let fields = ["username", "email", "password", "confirmPassword"];
+        let valid = true;
+
+        fields.forEach(id => {
+            let field = document.getElementById(id);
+            if (!validate(field)) valid = false;
+        });
+
+        if (valid) {
+            alert("Form submitted successfully!");
+        } else {
+            alert("Please correct the highlighted fields.");
+        }
+    }
+</script>
 </body>
 </html>
