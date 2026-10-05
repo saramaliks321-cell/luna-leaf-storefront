@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Luna & Leaf - Sign Up</title>
 
-    <!-- Bootstrap CSS CDN -->
-    <link 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-        rel="stylesheet"
-    >
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-    <!-- Your Storefront CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-    
-</script>
 
 <body>
 
@@ -26,41 +21,53 @@
         <p>Natural beauty for your home</p>
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Luna & Leaf</a>
 
-            <button 
-                class="navbar-toggler" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarNav"
-            >
+            <a class="navbar-brand" href="index.html">
+                Luna & Leaf
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
+                        <a class="nav-link" href="index.html#about">
+                            About
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#products">Products</a>
+                        <a class="nav-link" href="index.html#products">
+                            Products
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="signup.html">Sign Up</a>
+                        <a class="nav-link active" href="signup.html">
+                            Sign Up
+                        </a>
                     </li>
 
                 </ul>
+
             </div>
+
         </div>
     </nav>
 
@@ -73,84 +80,84 @@
 
                 <div class="card shadow p-4">
 
-                    <h2 class="text-center mb-4">Create an Account</h2>
+                    <h2 class="text-center mb-4">
+                        Create an Account
+                    </h2>
 
                     <p class="text-center">
                         Sign up to become part of the Luna & Leaf community.
                     </p>
 
-                    <form>
+                    <form id="signupForm">
 
-                        <!-- Username -->
                         <div class="mb-3">
                             <label for="username" class="form-label">
                                 Username
                             </label>
 
-                            <input type="text" class="form-control" id="username" onfocusout="validate(this)">
-
+                            <input type="text"
+                                   class="form-control"
+                                   id="username"
+                                   onfocusout="validate(this)">
                         </div>
 
-                        <!-- Email -->
                         <div class="mb-3">
                             <label for="email" class="form-label">
                                 Email
                             </label>
 
-                            <input type="text" class="form-control" id="email" onfocusout="validate(this)">
-
+                            <input type="text"
+                                   class="form-control"
+                                   id="email"
+                                   onfocusout="validate(this)">
                         </div>
 
-                        <!-- Password -->
                         <div class="mb-3">
                             <label for="password" class="form-label">
                                 Password
                             </label>
 
-                            <input type="text" class="form-control" id="password" onfocusout="validate(this)">
-
+                            <input type="password"
+                                   class="form-control"
+                                   id="password"
+                                   onfocusout="validate(this)">
                         </div>
 
-                        <!-- Confirm Password -->
                         <div class="mb-3">
                             <label for="confirmPassword" class="form-label">
                                 Confirm Password
                             </label>
 
-                            <input type="text" class="form-control" id="confirmpassword" onfocusout="validate(this)">
-
+                            <input type="password"
+                                   class="form-control"
+                                   id="confirmPassword"
+                                   onfocusout="validate(this)">
                         </div>
 
-                        <!-- Sign Up Button -->
                         <div class="d-grid">
-                            <button type="button" class="btn btn-success w-100" onclick="submitForm()">Sign Up</button>
+                            <button type="button"
+                                    class="btn btn-success"
+                                    onclick="submitForm()">
+                                Sign Up
+                            </button>
+                        </div>
 
+                        <div class="mt-4">
+                            <h4>JSON User Document</h4>
+
+                            <pre id="jsonOutput"
+                                 class="bg-light p-3 border rounded"></pre>
                         </div>
 
                     </form>
-                    <form id="signupForm">
-
-    <label>Username</label>
-    <input type="text" id="username" class="form-control" onfocusout="validate(this)">
-
-    <label>Email</label>
-    <input type="text" id="email" class="form-control" onfocusout="validate(this)">
-
-    <label>Password</label>
-    <input type="password" id="password" class="form-control" onfocusout="validate(this)">
-
-    <label>Confirm Password</label>
-    <input type="password" id="confirmPassword" class="form-control" onfocusout="validate(this)">
-
-    <button type="button" class="btn btn-success w-100" onclick="submitForm()">Sign Up</button>
-
-</form>
-
 
                     <div class="text-center mt-4">
                         <p>
                             Already have an account?
-                            <a href="index.html">Return to Storefront</a>
+
+                            <a href="index.html">
+                                Return to Storefront
+                            </a>
                         </p>
                     </div>
 
@@ -167,53 +174,92 @@
         <p>&copy; 2026 Luna & Leaf. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
-    <script 
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script><script>
-    function validate(obj) {
-        obj.classList.remove("error");
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        if (obj.value.trim() === "") {
-            obj.classList.add("error");
-            return false;
-        }
+    <script>
 
-        if (obj.id === "email") {
-            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(obj.value)) {
+        function validate(obj) {
+
+            obj.classList.remove("error");
+
+            if (obj.value.trim() === "") {
                 obj.classList.add("error");
                 return false;
             }
+
+            if (obj.id === "email") {
+
+                let emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(obj.value)) {
+                    obj.classList.add("error");
+                    return false;
+                }
+            }
+
+            if (obj.id === "confirmPassword") {
+
+                let pw =
+                    document.getElementById("password").value;
+
+                if (obj.value !== pw) {
+                    obj.classList.add("error");
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        if (obj.id === "confirmPassword") {
-            let pw = document.getElementById("password").value;
-            if (obj.value !== pw) {
-                obj.classList.add("error");
-                return false;
+        function submitForm() {
+
+            let fields =
+                ["username", "email", "password", "confirmPassword"];
+
+            let valid = true;
+
+            fields.forEach(id => {
+
+                let field =
+                    document.getElementById(id);
+
+                if (!validate(field)) {
+                    valid = false;
+                }
+
+            });
+
+            if (valid) {
+
+                const shopper = {
+                    username:
+                        document.getElementById("username").value,
+
+                    email:
+                        document.getElementById("email").value,
+
+                    password:
+                        document.getElementById("password").value,
+
+                    confirmPassword:
+                        document.getElementById("confirmPassword").value
+                };
+
+                document.getElementById("jsonOutput").textContent =
+                    JSON.stringify(shopper, null, 4);
+
+            } else {
+
+                alert(
+                    "Please correct the highlighted fields."
+                );
+
             }
         }
 
-        return true;
-    }
-
-    function submitForm() {
-        let fields = ["username", "email", "password", "confirmPassword"];
-        let valid = true;
-
-        fields.forEach(id => {
-            let field = document.getElementById(id);
-            if (!validate(field)) valid = false;
-        });
-
-        if (valid) {
-            alert("Form submitted successfully!");
-        } else {
-            alert("Please correct the highlighted fields.");
-        }
-    }
-</script>
+    </script>
 
 </body>
 </html>
